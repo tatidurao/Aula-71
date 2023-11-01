@@ -60,19 +60,7 @@ export default class TransactionScreen extends Component {
   };
 
   handleTransaction = () => {
-    var { bookId } = this.state;
-    db.collection("books")
-      .doc(bookId)
-      .get()
-      .then(doc => {
-        console.log(doc.data())
-        var book = doc.data();
-        if (book.is_book_available) {
-          this.initiateBookIssue();
-        } else {
-          this.initiateBookReturn();
-        }
-      });
+    
   };
 
   initiateBookIssue = () => {
